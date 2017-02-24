@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+Hilok:
+  edition: 12urenloop
+  name: Hilok
+  authentication_token: hilok_token
