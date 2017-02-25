@@ -4,3 +4,8 @@ Hilok:
   edition: 12urenloop
   name: Hilok
   authentication_token: hilok_token
+
+WVK:
+  edition: 12urenloop
+  name: WVK
+  authentication_token: wvk_token

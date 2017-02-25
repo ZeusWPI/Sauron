@@ -1,10 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-Hilok:
-  name: Hilok
-
-VTK:
-  name: VTK
-
-Zeus:
-  name: Zeus
+ZeusWVK: 
+  club: Zeus
+  partner: WVK

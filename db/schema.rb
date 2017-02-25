@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224173656) do
+ActiveRecord::Schema.define(version: 20170224200555) do
+
+  create_table "associations", force: :cascade do |t|
+    t.integer  "partner_id", null: false
+    t.integer  "club_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_associations_on_club_id"
+    t.index ["partner_id"], name: "index_associations_on_partner_id"
+  end
 
   create_table "clubs", force: :cascade do |t|
     t.string   "name",       null: false
