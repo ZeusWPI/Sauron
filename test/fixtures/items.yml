@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+Tent: 
+  name: Tent
+
+Vat:
+  name: Vat Bier (Leeg Vat)
+  parent: BierVat
+
+Bier:
+  name: Vat Bier (Inhoud)
+  parent: BierVat

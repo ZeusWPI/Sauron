@@ -41,3 +41,6 @@ group :development do
 end
 
 gem 'devise'
+
+# For barcode attachments
+gem 'paperclip'

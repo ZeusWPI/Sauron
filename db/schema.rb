@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224200555) do
+ActiveRecord::Schema.define(version: 20170225183004) do
 
   create_table "associations", force: :cascade do |t|
     t.integer  "partner_id", null: false
@@ -31,6 +31,24 @@ ActiveRecord::Schema.define(version: 20170224200555) do
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer  "parent_id"
+    t.string   "name",                     null: false
+    t.string   "description"
+    t.integer  "price"
+    t.string   "barcode"
+    t.string   "barcode_data"
+    t.string   "barcode_img_file_name"
+    t.string   "barcode_img_content_type"
+    t.integer  "barcode_img_file_size"
+    t.datetime "barcode_img_updated_at"
+    t.string   "type"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_items_on_name"
+    t.index ["parent_id"], name: "index_items_on_parent_id"
   end
 
   create_table "partners", force: :cascade do |t|
