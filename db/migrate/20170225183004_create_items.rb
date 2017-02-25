@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.references :parent
       t.string :name, null: false, index: true
       t.string :description
-      t.integer :price
+      t.integer :price_cents
 
       t.string :barcode
       t.string :barcode_data

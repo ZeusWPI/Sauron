@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20170225183004) do
     t.integer  "parent_id"
     t.string   "name",                     null: false
     t.string   "description"
-    t.integer  "price"
+    t.integer  "price_cents"
     t.string   "barcode"
     t.string   "barcode_data"
     t.string   "barcode_img_file_name"
