@@ -3,6 +3,7 @@
 tent:
   name: Tent
   category: tenten
+  price_cents: 200
 
 vat:
   name: Vat Bier (Leeg Vat)
