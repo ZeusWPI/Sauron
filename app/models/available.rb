@@ -2,7 +2,10 @@ class Available < ApplicationRecord
   belongs_to :edition
   belongs_to :item
 
-  delegate :description, :name, :price, to: :item
+  delegate :description, :description=,
+           :name, :name=,
+           :price, :price=,
+           to: :item
 
   scope :with_data, -> { includes(:item) }
 
