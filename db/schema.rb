@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170226140527) do
+ActiveRecord::Schema.define(version: 20170227133403) do
 
   create_table "associations", force: :cascade do |t|
     t.integer  "partner_id", null: false
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 20170226140527) do
     t.string   "description"
     t.integer  "price_cents"
     t.string   "barcode"
-    t.string   "barcode_data"
     t.string   "barcode_img_file_name"
     t.string   "barcode_img_content_type"
     t.integer  "barcode_img_file_size"
@@ -74,10 +73,15 @@ ActiveRecord::Schema.define(version: 20170226140527) do
 
   create_table "partners", force: :cascade do |t|
     t.integer  "edition_id"
-    t.string   "name",                 null: false
-    t.string   "authentication_token", null: false
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.string   "name",                     null: false
+    t.string   "authentication_token",     null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "barcode"
+    t.string   "barcode_img_file_name"
+    t.string   "barcode_img_content_type"
+    t.integer  "barcode_img_file_size"
+    t.datetime "barcode_img_updated_at"
     t.index ["edition_id"], name: "index_partners_on_edition_id"
   end
 

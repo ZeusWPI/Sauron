@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/nudded/barcodes
+  revision: a990e2b596025f5414f820f15c84b99e9eaf416b
+  specs:
+    barcodes (0.0.11)
+      prawn
+      rmagick
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -98,6 +106,10 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    pdf-core (0.6.1)
+    prawn (2.1.0)
+      pdf-core (~> 0.6.1)
+      ttfunk (~> 1.4.0)
     puma (3.7.1)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -131,6 +143,7 @@ GEM
       ffi (>= 0.5.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rmagick (2.16.0)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -154,6 +167,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.6)
+    ttfunk (1.4.0)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
@@ -176,6 +190,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  barcodes!
   byebug
   coffee-rails (~> 4.2)
   devise

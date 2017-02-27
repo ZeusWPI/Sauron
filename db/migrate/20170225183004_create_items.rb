@@ -7,7 +7,6 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.integer :price_cents
 
       t.string :barcode
-      t.string :barcode_data
       t.attachment :barcode_img
 
       t.string :type
