@@ -12,7 +12,7 @@ module Barcodable
   private
 
   def generate_barcode
-    data = SecureRandom.random_number(10**12).to_s
+    data = 12.times.map { SecureRandom.random_number(10) }.join
     barcode = Barcodes.create('EAN13', {
       data: data,
       bar_width: 35,

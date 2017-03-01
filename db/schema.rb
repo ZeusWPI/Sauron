@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228201619) do
+ActiveRecord::Schema.define(version: 20170228233834) do
 
   create_table "associations", force: :cascade do |t|
     t.integer  "partner_id", null: false
@@ -83,6 +83,18 @@ ActiveRecord::Schema.define(version: 20170228201619) do
     t.integer  "barcode_img_file_size"
     t.datetime "barcode_img_updated_at"
     t.index ["edition_id"], name: "index_partners_on_edition_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer  "partner_id"
+    t.integer  "available_id"
+    t.integer  "status"
+    t.integer  "reserved_count"
+    t.integer  "picked_up_count"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["available_id"], name: "index_reservations_on_available_id"
+    t.index ["partner_id"], name: "index_reservations_on_partner_id"
   end
 
   create_table "users", force: :cascade do |t|

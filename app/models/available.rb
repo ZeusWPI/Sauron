@@ -1,6 +1,7 @@
 class Available < ApplicationRecord
   belongs_to :edition
   belongs_to :item
+  has_many :reservations
 
   delegate :description, :description=,
            :name, :name=,
