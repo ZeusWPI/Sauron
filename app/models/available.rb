@@ -6,6 +6,7 @@ class Available < ApplicationRecord
   delegate :description, :description=,
            :name, :name=,
            :price, :price=,
+           :parent,
            to: :item
 
   scope :with_data, -> { includes(:item) }
