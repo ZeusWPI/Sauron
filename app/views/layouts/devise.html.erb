@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sauron</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'devise', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <section class='hero is-fullheight sign-in'>
+      <div class='hero-body'>
+        <div class='container'>
+          <%= render 'flash' %>
+          <div class='columns is-vcentered'>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

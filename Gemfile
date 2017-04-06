@@ -45,3 +45,6 @@ gem 'devise'
 # For barcode attachments
 gem 'barcodes', git: "git://github.com/nudded/barcodes"
 gem 'paperclip'
+
+gem 'bulma-rails'
+gem 'font-awesome-rails'

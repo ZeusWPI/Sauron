@@ -1,0 +1,50 @@
+<div class='column is-4 is-offset-2'>
+  <div class='box'>
+    <h1>Admins</h1>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class='control has-icon'>
+        <%= f.email_field :email, class: 'input', placeholder: 'Email', autofocus: true %>
+        <span class='icon is-small'>
+          <i class='fa fa-envelope'></i>
+        </span>
+      </div>
+
+      <div class='control has-icon'>
+        <%= f.password_field :password, class: 'input', placeholder: 'Password', autocomplete: 'off' %>
+        <span class='icon is-small'>
+          <i class='fa fa-lock'></i>
+        </span>
+      </div>
+
+      <div class='control'>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+
+      <div class='control'>
+        <%= f.submit 'Log in', class: 'button is-primary' %>
+      </div>
+    <% end %>
+
+    <%= render 'devise/shared/links' %>
+  </div>
+</div>
+
+<div class='column is-4'>
+  <div class='box'>
+    <h1>Partners</h1>
+    <p>Partners can log in using the unique link sent to their e-mailadress.
+    If the link doesn't work, they can paste the token here as well.</p>
+    <div class='field has-addons'>
+      <p class='control token'>
+        <input class='input' type='text' placeholder='Token'>
+      </p>
+      <p class='control'>
+        <a class='button is-info'>
+          <i class='fa fa-arrow-right' aria-hidden='true'></i>
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
