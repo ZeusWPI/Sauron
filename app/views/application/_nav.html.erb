@@ -1,37 +1,39 @@
-<nav class='nav'>
-  <div class='nav-left'>
-    <a class='nav-item'>
-      <%= image_tag 'logo' %>
-    </a>
-  </div>
-
-  <!-- This 'nav-toggle' hamburger menu is only visible on mobile -->
-  <!-- You need JavaScript to toggle the 'is-active' class on 'nav-menu' -->
-  <span class='nav-toggle'>
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-
-  <!-- This 'nav-menu' is hidden on mobile -->
-  <!-- Add the modifier 'is-active' to display it on mobile -->
-  <div class='nav-right nav-menu'>
-    <%= link_to 'Home', root_path, class: 'nav-item' %>
-    <%= link_to 'Items', items_path, class: 'nav-item' %>
-
-    <span class='nav-item'>
-      <a class='button'>
-        <span class='icon'>
-          <i class='fa fa-calendar-o'></i>
-        </span>
-        <span><%= Edition.last.try(:name) %></span>
+<div class='container'>
+  <nav class='nav'>
+    <div class='nav-left'>
+      <a class='nav-item'>
+        <%= image_tag 'logo' %>
       </a>
-      <a class='button is-primary'>
-        <span class='icon'>
-          <i class='fa fa-user'></i>
-        </span>
-        <span><%= current_user.name %></span>
-      </a>
+    </div>
+
+    <!-- This 'nav-toggle' hamburger menu is only visible on mobile -->
+    <!-- You need JavaScript to toggle the 'is-active' class on 'nav-menu' -->
+    <span class='nav-toggle'>
+      <span></span>
+      <span></span>
+      <span></span>
     </span>
-  </div>
-</nav>
+
+    <!-- This 'nav-menu' is hidden on mobile -->
+    <!-- Add the modifier 'is-active' to display it on mobile -->
+    <div class='nav-right nav-menu'>
+      <%= link_to 'Home', root_path, class: 'nav-item' %>
+      <%= link_to 'Items', items_path, class: 'nav-item' %>
+
+      <span class='nav-item'>
+        <a class='button'>
+          <span class='icon'>
+            <i class='fa fa-calendar-o'></i>
+          </span>
+          <span><%= Edition.last.try(:name) %></span>
+        </a>
+        <a class='button is-primary'>
+          <span class='icon'>
+            <i class='fa fa-user'></i>
+          </span>
+          <span><%= current_user.name %></span>
+        </a>
+      </span>
+    </div>
+  </nav>
+</div>
