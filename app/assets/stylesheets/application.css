@@ -12,6 +12,7 @@
  *
  *= require_tree ./application
  *= require_self
+ *= require font-awesome
  */
 
 @import "bulma";
