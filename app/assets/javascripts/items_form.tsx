@@ -9,4 +9,4 @@ class ItemsForm extends React.Component<{}, {}> {
   }
 }
 
-render(<ItemsForm />, document.getElementById('temp'));
+render(<ItemsForm />, document.getElementById('items-form'));

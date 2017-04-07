@@ -18,12 +18,7 @@ var config = {
         use: [ { loader : 'babel-loader' }, { loader: 'ts-loader'}]
       }
     ]
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      React: 'react'
-    })
-  ]
+  }
 };
 
 module.exports = config;
