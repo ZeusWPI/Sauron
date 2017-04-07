@@ -20,3 +20,7 @@
 # Ignore Byebug command history file.
 .byebug_history
 public/system/
+
+# Ignore webpack bundle
+app/assets/javascripts/bundles/
+node_modules/
