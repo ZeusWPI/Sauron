@@ -1,0 +1,8 @@
+<div class='item'>
+  <%= composed_item.name %>
+  <% composed_item.items.each do |item| %>
+    <div class='subitem'>
+      <%= item.name %>
+    </div>
+  <% end %>
+</div>
