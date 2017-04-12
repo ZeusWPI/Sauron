@@ -21,3 +21,55 @@
   box-shadow: 0 1px 0 rgba(219, 219, 219, 0.3);
   margin-bottom: 20px;
 }
+
+.control:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+#items-form {
+  .panel .panel-block {
+    &.with-field {
+      padding: 0;
+
+      input:not([type="submit"]) {
+        border-radius: 0;
+        border: 0;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.is-fullwidth {
+  width: 100%;
+}
+
+.items-wrapper {
+  .panel {
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .sub-item {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.placeholder {
+  color: rgb(117, 117, 117);
+}
+
+.click {
+  cursor: pointer;
+}
+
+.categories-wrapper {
+  margin-top: -1px;
+
+  .panel-block {
+    @extend .click;
+    border-left-width: 5px;
+  }
+}

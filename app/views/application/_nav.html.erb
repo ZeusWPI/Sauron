@@ -1,9 +1,9 @@
 <div class='container'>
   <nav class='nav'>
     <div class='nav-left'>
-      <a class='nav-item'>
+      <%= link_to root_path, class: 'nav-item' do %>
         <%= image_tag 'logo' %>
-      </a>
+      <% end %>
     </div>
 
     <!-- This 'nav-toggle' hamburger menu is only visible on mobile -->

@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree ./devise
  *= require_self
  *= require font-awesome
  */
@@ -23,10 +22,6 @@ body {
 
 .sign-in {
   background: transparent;
-}
-
-.control:not(:last-child) {
-    margin-bottom: 10px;
 }
 
 .control.token {
