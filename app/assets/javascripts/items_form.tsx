@@ -117,13 +117,13 @@ class ItemsForm extends React.Component<{}, State> {
   onSubmit(e : any) {
     e.preventDefault();
 
-    const item: any = Object.assign(this.state.item);
+    const item: any = { ...this.state.item };
     item['category_id'] = this.state.item.category ? this.state.item.category.id : null;
     item['category'] = undefined;
 
     if (this.state.items.length != 0) {
       item['items_attributes'] = this.state.items.map((i: any) => {
-        const child = Object.assign(i);
+        const child = { ...i };
         child['category_id'] = item.category_id;
         child['category'] = undefined;
         return child;

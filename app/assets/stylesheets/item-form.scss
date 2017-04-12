@@ -1,0 +1,34 @@
+#items-form {
+  .panel .panel-block {
+    &.with-field {
+      padding: 0;
+
+      input:not([type="submit"]) {
+        border-radius: 0;
+        border: 0;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .items-wrapper {
+    .panel {
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .sub-item {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .categories-wrapper {
+    margin-top: -1px;
+
+    .panel-block {
+      border-left-width: 5px;
+    }
+  }
+}

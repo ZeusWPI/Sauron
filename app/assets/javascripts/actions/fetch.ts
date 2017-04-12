@@ -45,6 +45,10 @@ function request(
     });
 }
 
+export function GET(url: string, success?: callback, fail?: callback) {
+  request(url, Method.GET, undefined, success, fail);
+}
+
 export function POST(url: string, body: any, success?: callback, fail?: callback) {
   request(url, Method.POST, body, success, fail);
 }

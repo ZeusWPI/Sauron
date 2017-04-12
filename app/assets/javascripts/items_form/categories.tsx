@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Category } from '../items_form.tsx';
+import { GET } from '../actions/fetch.ts';
 
 interface Props {
   isVisible: boolean;
@@ -19,18 +20,7 @@ class Categories extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    const headers: any = {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-    };
-
-    fetch('/categories', { headers })
-      .then((response) => {
-        return response.json()
-      })
-      .then((json: any) => {
-        this.setState({ categories: json.data })
-      });
+    GET('/categories', (data) => { this.setState({ categories: data.data }) });
   }
 
   render () {
@@ -51,7 +41,9 @@ class Categories extends React.Component<Props, State> {
 
     const blocks = categories.map((c, i) => {
       return (
-        <div key={ i } className='panel-block' onClick={ () => handleChange(c) }>{ c.name }</div>
+        <div key={ i } className='panel-block click' onClick={ () => handleChange(c) }>
+          { c.name }
+        </div>
       );
     });
 
