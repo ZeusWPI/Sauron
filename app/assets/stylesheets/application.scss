@@ -28,7 +28,6 @@
     margin-bottom: 10px;
 }
 
-
 .is-fullwidth {
   width: 100%;
 }
@@ -39,13 +38,4 @@
 
 .click {
   cursor: pointer;
-}
-
-.categories-wrapper {
-  margin-top: -1px;
-
-  .panel-block {
-    @extend .click;
-    border-left-width: 5px;
-  }
 }

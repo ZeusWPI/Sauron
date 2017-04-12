@@ -2,30 +2,10 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import { NumberField, TextField, Submit } from './components/input.tsx';
-import Categories from './items_form/categories.tsx';
+import { Categories, Items } from './items_form/index.ts';
 import { POST } from './actions/fetch.ts';
 
-interface Props {
-  items: Item[];
-  removeItem: (i: number) => () => void;
-  handleChange: (i: number) => (e: any) => void;
-}
-
-interface ItemProps {
-  id: number;
-  item: Item;
-  removeItem: () => void;
-  handleChange: (e: any) => void;
-}
-
-interface State {
-  isComposed: boolean;
-  item: Item;
-  items: Item[];
-  categoriesVisible: boolean;
-}
-
-interface Item {
+export interface Item {
   name: string;
   description: string;
   price?: number;
@@ -37,63 +17,17 @@ export interface Category {
   name: string;
 }
 
+interface State {
+  isComposed: boolean;
+  item: Item;
+  items: Item[];
+  categoriesVisible: boolean;
+}
+
 const getItem: () => Item = () => {
   return { name: null, description: null, price: null, category: null };
 }
 
-class SubItem extends React.Component<ItemProps, {}> {
-  render() {
-    let { id, removeItem, handleChange, item: { name, description, price } } = this.props;
-
-    return (
-      <div className='panel'>
-        <div className='panel-heading sub-item'>
-          Part { id + 1 }
-          <span className='icon click' onClick={ removeItem }>
-            <i className='fa fa-close'></i>
-          </span>
-        </div>
-        <div className='panel-block with-field'>
-          <TextField placeholder='Name' value={ name } name='name' onChange={ handleChange } />
-        </div>
-        <div className='panel-block with-field'>
-          <TextField placeholder='Description' value={ description } name='description' onChange={ handleChange } />
-        </div>
-        <div className='panel-block with-field'>
-          <NumberField placeholder='Base Price' value={ price } name='price' onChange={ handleChange } />
-        </div>
-      </div>
-    );
-  }
-}
-
-class Items extends React.Component<Props, {}> {
-  render() {
-    let { items, removeItem, handleChange } = this.props;
-
-    if (items.length == 0) { return null; }
-
-    const subItems = items.map((i, key) => {
-      return (
-        <SubItem
-          key={ key }
-          id={ key }
-          item={ i }
-          removeItem={ removeItem(key) }
-          handleChange={ handleChange(key) } />
-      );
-    });
-
-    return (
-      <div className='panel-block'>
-        <div className='items-wrapper is-fullwidth'>
-          <span>Consists of</span>
-          { subItems }
-        </div>
-      </div>
-    );
-  }
-}
 
 class ItemsForm extends React.Component<{}, State> {
   constructor() {
