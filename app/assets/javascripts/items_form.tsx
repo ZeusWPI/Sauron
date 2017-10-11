@@ -22,6 +22,7 @@ interface State {
   item: Item;
   items: Item[];
   categoriesVisible: boolean;
+  errors: any;
 }
 
 const getItem: () => Item = () => {
@@ -36,7 +37,8 @@ class ItemsForm extends React.Component<{}, State> {
       isComposed: false,
       item: getItem(),
       items: [],
-      categoriesVisible: false
+      categoriesVisible: false,
+      errors: {}
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -46,6 +48,7 @@ class ItemsForm extends React.Component<{}, State> {
     this.handleItemChange = this.handleItemChange.bind(this);
     this.toggleCategory = this.toggleCategory.bind(this);
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
+    this.hasError = this.hasError.bind(this);
   }
 
   onSubmit(e : any) {
@@ -65,7 +68,7 @@ class ItemsForm extends React.Component<{}, State> {
       item['type'] = 'ComposedItem';
     }
 
-    POST('/items', { item }, (d) => console.log(d), (d) => console.log(d));
+    POST('/items', { item }, (d) => console.log(d), (d) => this.setState({ errors: d }));
   }
 
   addItem() {
@@ -104,6 +107,10 @@ class ItemsForm extends React.Component<{}, State> {
     this.setState({ categoriesVisible: !this.state.categoriesVisible });
   }
 
+  hasError(key: string) {
+    return this.state.errors[key] !== undefined;
+  }
+
   render() {
     let { items, item: { name, description, price, category } } = this.state;
 
@@ -114,7 +121,7 @@ class ItemsForm extends React.Component<{}, State> {
             Item Information
           </div>
           <div className='panel-block with-field'>
-            <TextField placeholder='Name' value={ name } name='name' onChange={ this.handleChange } />
+            <TextField placeholder='Name' value={ name } name='name' onChange={ this.handleChange } hasError={ this.hasError('name') } />
           </div>
           <div className='panel-block with-field'>
             <TextField placeholder='Description' value={ description } name='description' onChange={ this.handleChange } />

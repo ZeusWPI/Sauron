@@ -1,0 +1,21 @@
+.tooltip {
+  position: relative;
+
+  .tooltip-message {
+    top: -5px;
+    right: 105%;
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  }
+
+  &:hover .tooltip-message {
+    visibility: visible;
+  }
+}

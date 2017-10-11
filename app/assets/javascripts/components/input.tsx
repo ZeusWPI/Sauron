@@ -11,11 +11,22 @@ interface CProps {
   className?: string;
   name?: string;
   onChange?: (e: any) => void;
+  hasError?: boolean;
 }
 
-const Input: React.StatelessComponent<Props> =  ({ className, type, placeholder, value, name, onChange }) => {
+const Input: React.StatelessComponent<Props> =  ({ className, type, placeholder, value, name, onChange, hasError = false }) => {
+  const errorTag = (
+    <span className='icon is-small tooltip'>
+      <i className='fa fa-warning'></i>
+      <span className='tooltip-message'>
+        Error
+      </span>
+    </span>
+  );
+  const error = hasError ? errorTag : null;
+
   return (
-    <div className='control'>
+    <div className={ classNames('control', { ' has-icon has-icon-right': hasError }) }>
       <input
         type={ type }
         className={ classNames({ input: (type != 'submit') }, className) }
@@ -23,6 +34,7 @@ const Input: React.StatelessComponent<Props> =  ({ className, type, placeholder,
         value={ value || '' }
         name={ name }
         onChange={ onChange } />
+      { error }
     </div>
   );
 }
