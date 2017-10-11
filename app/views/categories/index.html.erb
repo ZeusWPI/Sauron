@@ -1,0 +1,29 @@
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Deadline</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |c| %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= c.deadline %></td>
+        <td>
+          <%= link_to edit_category_path(c), class: 'button is-small is-outlined' do %>
+            <span class='icon is-small'>
+              <i class='fa fa-edit'></i>
+            </span>
+          <% end %>
+          <%= link_to c, method: :delete, class: 'button is-small is-danger is-outlined' do %>
+            <span class='icon is-small'>
+              <i class='fa fa-times'></i>
+            </span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

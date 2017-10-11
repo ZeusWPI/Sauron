@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   root to: 'dashboard#index'
 
   resources :items, only: [:create, :index]
-  resources :categories, only: :index
+  resources :categories
 end
