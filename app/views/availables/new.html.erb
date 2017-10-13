@@ -1,0 +1,10 @@
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= form_for [@edition, @edition.items.build] do |f| %>
+        <%= f.hidden_field :item_id, value: item.id %>
+        <%= f.submit item.name %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

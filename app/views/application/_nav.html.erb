@@ -21,12 +21,12 @@
       <%= link_to 'Items', items_path, class: 'nav-item' %>
 
       <span class='nav-item'>
-        <a class='button'>
+        <%= link_to editions_path, class: 'button' do %>
           <span class='icon'>
             <i class='fa fa-calendar-o'></i>
           </span>
           <span><%= Edition.last.try(:name) %></span>
-        </a>
+        <% end %>
         <a class='button is-primary'>
           <span class='icon'>
             <i class='fa fa-user'></i>

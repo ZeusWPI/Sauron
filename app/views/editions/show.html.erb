@@ -1,0 +1,19 @@
+<h2><%= @edition.name %></h2>
+
+
+<div class='columns'>
+  <div class='column is-6'>
+    <h5>
+      Partners
+      <small><%= link_to 'Add partner', new_edition_partner_path(@edition) %></small>
+    </h5>
+    <%= render 'partners/index', partners: @edition.partners %>
+  </div>
+  <div class='column is-6'>
+    <h5>
+      Items
+      <small><%= link_to 'Add item', new_edition_available_path(@edition) %></small>
+    </h5>
+    <%= render 'availables/index', items: @edition.items.with_data %>
+  </div>
+</div>

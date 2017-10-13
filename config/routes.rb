@@ -6,4 +6,8 @@ Rails.application.routes.draw do
 
   resources :items, only: [:create, :index]
   resources :categories
+  resources :editions do
+    resources :partners, shallow: true
+    resources :availables, shallow: true
+  end
 end

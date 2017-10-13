@@ -1,0 +1,14 @@
+<%= form_for @edition do |f| %>
+  <%= render 'errors', object: @edition %>
+
+  <div class='field'>
+    <label class='label'>Name</label>
+    <div class='control'>
+      <%= f.text_field :name, class: 'input' %>
+    </div>
+  </div>
+
+  <div class='control'>
+    <%= f.submit :create, class: 'button is-info' %>
+  </div>
+<% end %>
